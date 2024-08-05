@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors:{
         color:'#339f89',
-        lightColor: '#00fa9a'
+        lightColor: '#339f8980'
       }
     },
   },
