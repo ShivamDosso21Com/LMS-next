@@ -14,7 +14,7 @@ export default function LoginForm() {
                 <label className="block text-black text-sm font-bold mb-2" >
                     Password
                 </label>
-                <input className="shadow shadow-lg hover:shadow-gray-400 border rounded w-full py-2 px-3 text-gray-700" id="password" type="password" placeholder="******************" />
+                <input className="shadow shadow-lg hover:shadow-gray-400 border rounded w-full py-2 px-3 text-gray-700" id="password" type="password" placeholder="********" />
                 <p className="text-red-500 text-xs italic"></p>
             </div>
             <div className="flex items-center justify-center mt-12">
