@@ -56,7 +56,7 @@ const LeftContent: React.FC<LeftNavProps> = ({ chapters, selectedChapter, onSele
             key={chapter}
             className={`py-2 px-4 cursor-pointer border-b border-gray-200 ${
               selectedChapter === chapter
-                ? 'bg-light-green-200 text-white border border-green-400'
+                ? 'bg-light-green-200 text-color border border-green-400'
                 : ''
             }`}
             onClick={() => onSelectChapter(chapter)}
