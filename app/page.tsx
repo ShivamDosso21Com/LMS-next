@@ -8,9 +8,6 @@ export default function Home() {
         <Topbar />
         <div className="flex bg-white">
           <Sidebar />
-          <div className="ml-16 p-4">
-        
-          </div>
         </div>
       </div>
     </>
