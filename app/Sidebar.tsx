@@ -25,7 +25,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="bg-white flex flex-col h-screen shadow-2xl">
+    <div className="bg-white flex flex-col h-screen shadow-2xl mt-16">
       <ul className="flex-grow">
         {options.map((option, index) => (
           <li
@@ -41,7 +41,7 @@ export default function Sidebar() {
           </li>
         ))}
       </ul>
-      <div className="bg-gray-100 w-full p-4 mt-auto">
+      <div className="bg-gray-100 w-full p-4 mt-16">
         <h1 className="text-gray-700 mb-3">Follow us on social media</h1>
         <div className="flex justify-around">
           {medias.map((media, index) => (
