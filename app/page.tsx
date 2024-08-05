@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className="h-screen w-screen bg-white">
         <Topbar />
-        <div className="flex">
+        <div className="flex bg-white">
           <Sidebar />
           <div className="ml-16 p-4">
         
