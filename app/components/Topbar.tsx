@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import Sidebar from "./Sidebar";
+import Study_bar from "./Study_bar";
 
 const Topbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +22,11 @@ const Topbar: React.FC = () => {
           </button>
         </div>
         <div>
-          <Image src="/logo.png" alt="Logo" width={150} height={150} />
+          <Image src="/logo.jpeg" alt="Logo" width={80} height={100} />
         </div>
 
         {/* Hamburger Menu Button */}
-     
+     <Study_bar/>
 
         {/* Placeholder for profile icon */}
         <div className=" sm:flex items-center">

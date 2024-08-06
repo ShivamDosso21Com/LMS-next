@@ -2,34 +2,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { login } from "./services/api/auth/Login";
-// Update with the actual path
 
 export default function Login() {
-  const [userName, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const isFormValid = userName.trim() !== "" && password.trim() !== "";
-
-  const handleLogin = async () => {
-    if (isFormValid) {
-      setLoading(true);
-      try {
-        await login(userName, password);
-      } catch (error) {
-        console.error("Login error:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
+  const isFormValid = username.trim() !== "" && password.trim() !== "";
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-200">
       <div className="bg-white w-full max-w-md rounded-3xl shadow-lg p-8 mx-4">
         <div className="text-center mb-6">
-         <div className="flex justify-center items-center"> <Image 
+        <div className="flex justify-center items-center"> <Image 
             src="/logo.jpeg"
             width={100}
             height={100}  
@@ -37,25 +21,25 @@ export default function Login() {
             className="mt-10"
           />
           <h1 className="text-3xl font-bold text-gray-800 mt-10 -ml-4">Skill On Time</h1></div>
-          <p className="text-gray-500 font-bold mt-2 text-xl">Student Login</p>
+          <p className="text-gray-500 font-bold mt-2 text-xl">Update Password</p>
         </div>
         <form className="space-y-6">
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="username">
-              Username
+           Password
             </label>
             <input
               className="shadow-lg border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-color"
               id="username"
               type="text"
               placeholder="Username"
-              value={userName}
+              value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
-              Password
+             Confirm Password
             </label>
             <input
               className="shadow-lg border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-color"
@@ -69,18 +53,17 @@ export default function Login() {
           </div>
           <div className="flex flex-col items-center">
             <button
-              className={`w-full ${isFormValid ? "bg-color hover:bg-lightColor" : "bg-gray-300 cursor-not-allowed"} text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline`}
+              className={`w-full ${isFormValid ? "bg-black hover:bg-lightColor" : "bg-gray-300 cursor-not-allowed"} text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline`}
               type="button"
-              onClick={handleLogin}
-              disabled={!isFormValid || loading}
+              disabled={!isFormValid}
             >
-              {loading ? "Signing In..." : "Sign In"}
+              Update Password
             </button>
             <Link
               className="mt-4 text-color hover:text-lightColor font-bold text-sm"
-              href="/forget_password"
+              href="/"
             >
-              Forgot Password?
+            Go to Login
             </Link>
           </div>
         </form>
