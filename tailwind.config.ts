@@ -18,7 +18,7 @@ const config: Config = {
         lightColor: '#339f8980',
       },
       screens: {
-        'sm': '640px', 
+        'sm': '440px', 
         'md': '768px', 
         'lg': '1024px', 
        
