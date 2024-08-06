@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function LoginForm() {
@@ -17,13 +18,13 @@ export default function LoginForm() {
                 <input className="shadow shadow-lg hover:shadow-gray-400 border rounded w-full py-2 px-3 text-gray-700" id="password" type="password" placeholder="********" />
                 <p className="text-red-500 text-xs italic"></p>
             </div>
-            <div className="flex items-center justify-center mt-12">
-                <button className="float-center w-2/5 bg-color hover:bg-lightColor hover:text-gray-700 text-white font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline " type="button">
+            <div className="grid items-center justify-center mt-6">
+                <button className="flex float-center w-auto  items-center justify-center bg-color hover:bg-lightColor hover:text-gray-700 text-white font-bold py-2 px-4 rounded-3xl focus:outline-none focus:shadow-outline " type="button">
                     Sign In
                 </button>
-                {/* <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-lightColor text-color mt-5" href={"forget"}>
                     Forgot Password?
-                </a> */}
+                </Link>
             </div>
         </form>
         <p className="text-center text-gray-500 text-xs">
