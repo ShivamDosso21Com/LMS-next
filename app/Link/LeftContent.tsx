@@ -122,7 +122,7 @@ interface LeftNavProps {
 
 const LeftContent: React.FC<LeftNavProps> = ({ chapters, selectedChapter, onSelectChapter }) => {
   return (
-    <div className="w-full md:w-1/4  border-gray-200">
+    <div className="w-full md:w-1/4  2xl:w-1/2 border-gray-200">
       <h3 className="text-lg font-bold pb-2 px-4">Module 1</h3>
       <ul>
         {Object.keys(chapters).map((chapter) => (

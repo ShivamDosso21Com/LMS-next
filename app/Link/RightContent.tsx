@@ -38,7 +38,7 @@ interface RightContentProps {
 
 const RightContent: React.FC<RightContentProps> = ({ lessons }) => {
   return (
-    <div className="w-full md:w-3/4 box-border p-2 border-2 m-2 mt-9">
+    <div className="w-full md:w-3/4  2xl:w-1/2 box-border p-2 border-2 m-2 mt-9">
       <div className="text-black font-bold">Lessons</div>
       <ul>
         {lessons.map((lesson, index) => (
