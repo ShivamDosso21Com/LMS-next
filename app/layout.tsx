@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Topbar from "./components/Topbar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className='bg-gray-300'>{children}</body>
+      <body className="bg-white overflow-hidden">
+   {children}
+      </body>
     </html>
   );
 }
+

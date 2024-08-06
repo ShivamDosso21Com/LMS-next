@@ -14,11 +14,11 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
   const options = [
     { label: "Home", value: "/home", icon: IoHomeOutline },
-    { label: "Learn", value: "/about", icon: IoBookOutline },
-    { label: "Classroom", value: "/services", icon: FaChalkboard },
-    { label: "Practice", value: "/contact", icon: MdOutlineVideoSettings },
-    { label: "Projects", value: "/projects", icon: GoProject },
-    { label: "Career", value: "/career", icon: BsGraphUpArrow },
+    { label: "Learn", value: "/home/learn", icon: IoBookOutline },
+    { label: "Classroom", value: "/home/classroom", icon: FaChalkboard },
+    { label: "Practice", value: "/home/practice", icon: MdOutlineVideoSettings },
+    { label: "Projects", value: "/home/projects", icon: GoProject },
+  
   ];
 
   const medias = [
