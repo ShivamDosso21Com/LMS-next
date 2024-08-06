@@ -14,7 +14,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
   const options = [
     { label: "Home", value: "/home", icon: IoHomeOutline },
-    { label: "Learn", value: "/about", icon: IoBookOutline },
+    { label: "Learn", value: "/Link", icon: IoBookOutline },
     { label: "Classroom", value: "/services", icon: FaChalkboard },
     { label: "Practice", value: "/contact", icon: MdOutlineVideoSettings },
     { label: "Projects", value: "/projects", icon: GoProject },
