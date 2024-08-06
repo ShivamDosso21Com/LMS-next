@@ -13,3 +13,6 @@ body {
   padding: 0;
   font-size:smaller;
 }
+input.middle:focus {
+  outline-width: 0;
+  }

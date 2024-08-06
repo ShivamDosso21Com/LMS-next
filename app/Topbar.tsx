@@ -5,7 +5,7 @@ import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import Sidebar from "./Sidebar";
 
-export default function Topbar() {
+const Topbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleButton = () => {
@@ -13,26 +13,32 @@ export default function Topbar() {
   };
 
   return (
-    <div className="bg-white shadow-2xl w-full h-16 flex items-center justify-between fixed top-0 left-0 z-50 px-4">
-      <div>
-        <Image src="/logo.png" alt="Logo" width={150} height={150} />
-      </div>
+    <>
+      <div className="bg-white shadow-2xl w-full h-16 flex items-center justify-between fixed top-0 left-0 z-50 px-4">
+      <div className="sm:hidden flex justify-start">
+          <button onClick={handleButton} className="text-gray-600 hover:text-gray-900">
+            {isOpen ? <IoMdClose size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
+        <div>
+          <Image src="/logo.png" alt="Logo" width={150} height={150} />
+        </div>
 
-      {/* Hamburger Menu Button */}
-      <div className="sm:hidden flex items-center">
-        <button onClick={handleButton} className="text-gray-600 hover:text-gray-900">
-          {isOpen ? <IoMdClose size={24} /> : <HiMenu size={24} />}
-        </button>
-      </div>
+        {/* Hamburger Menu Button */}
+     
 
-    
-
-      {/* Placeholder for profile icon */}
-      <div className="hidden sm:flex items-center">
-        <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-bold">
-          P
+        {/* Placeholder for profile icon */}
+        <div className=" sm:flex items-center">
+          <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-bold">
+            P
+          </div>
         </div>
       </div>
-    </div>
+      
+      {/* Sidebar */}
+      <Sidebar isOpen={isOpen} handleClose={() => setIsOpen(false)} />
+    </>
   );
-}
+};
+
+export default Topbar;

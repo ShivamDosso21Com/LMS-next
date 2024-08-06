@@ -3,11 +3,15 @@ import { IoHomeOutline, IoBookOutline } from "react-icons/io5";
 import { MdOutlineVideoSettings } from "react-icons/md";
 import { GoProject } from "react-icons/go";
 import { BsGraphUpArrow } from "react-icons/bs";
-import { FaChalkboard } from "react-icons/fa";
-import { FaYoutube, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaChalkboard, FaYoutube, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen: boolean;
+  handleClose: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
   const options = [
     { label: "Home", value: "/home", icon: IoHomeOutline },
     { label: "Learn", value: "/about", icon: IoBookOutline },
@@ -25,7 +29,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="bg-white flex flex-col h-screen mt-16 shadow-2xl">
+    <div className={`bg-white flex flex-col h-screen mt-16 shadow-2xl fixed top-0 left-0 z-40 w-fit transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out sm:translate-x-0 sm:static sm:shadow-none`}>
       <ul className="flex-grow">
         {options.map((option, index) => (
           <li
@@ -33,28 +37,29 @@ export default function Sidebar() {
             className="flex items-center mt-3 gap-4 hover:bg-color hover:text-white hover:rounded-lg"
           >
             <Link href={option.value}>
-              <button className="p-3 flex items-center w-full hover:text-white">
+              <button className="p-3 flex items-center w-full hover:text-white" onClick={handleClose}>
                 <option.icon className="mr-2" />
                 {option.label}
               </button>
             </Link>
           </li>
         ))}
-       
       </ul>
-      <div className="bg-gray-100 w-full p-4 mb-16">
-          <h1 className="text-gray-700 mb-3">Follow us on social media</h1>
-          <div className="flex justify-around">
-            {medias.map((media, index) => (
-              <button
-                key={index}
-                className="text-gray-600 hover:text-gray-900 p-2"
-              >
-                <media.icon size={24} />
-              </button>
-            ))}
-          </div>
+      <div className="bg-gray-100 w-fit p-4 mb-16">
+        <h1 className="text-gray-700 mb-3">Follow us on social media</h1>
+        <div className="flex justify-around">
+          {medias.map((media, index) => (
+            <button
+              key={index}
+              className="text-gray-600 hover:text-gray-900 p-2"
+            >
+              <media.icon size={24} />
+            </button>
+          ))}
         </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Sidebar;
