@@ -2,9 +2,9 @@ import Link from "next/link";
 import { IoHomeOutline, IoBookOutline } from "react-icons/io5";
 import { MdOutlineVideoSettings } from "react-icons/md";
 import { GoProject } from "react-icons/go";
-import { BsGraphUpArrow } from "react-icons/bs";
 import { FaChalkboard, FaYoutube, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoGiftOutline } from "react-icons/io5";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -18,6 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
     { label: "Classroom", value: "/home/classroom", icon: FaChalkboard },
     { label: "Practice", value: "/home/practice", icon: MdOutlineVideoSettings },
     { label: "Projects", value: "/home/projects", icon: GoProject },
+    { label: "Refer and Earn", value: "/home/refer_and_earn", icon: IoGiftOutline },
   
   ];
 

@@ -283,8 +283,10 @@ const LinkComponent = () => {
   const [selectedChapter, setSelectedChapter] = useState<ChapterKey>('Fundamentals of Web Development');
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <main className="mt-4 flex flex-col md:flex-row">
+    <div 
+    className="min-h-screen bg-white p-2"
+    >
+      <main className="mt-1 flex flex-col md:flex-row">
         <LeftNav
           chapters={chapters}
           selectedChapter={selectedChapter}

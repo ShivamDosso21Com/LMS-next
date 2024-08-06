@@ -20,12 +20,12 @@ export default function Login() {
             alt="logo"
           />
           <h1 className="text-3xl font-bold text-gray-800 mt-4">Skill On Time</h1>
-          <p className="text-gray-500 font-bold mt-2">Student Login</p>
+          <p className="text-gray-500 font-bold mt-2">Update Password</p>
         </div>
         <form className="space-y-6">
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="username">
-              Username
+           Password
             </label>
             <input
               className="shadow-lg border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-color"
@@ -38,7 +38,7 @@ export default function Login() {
           </div>
           <div className="mb-6">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
-              Password
+             Confirm Password
             </label>
             <input
               className="shadow-lg border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-color"
@@ -52,17 +52,17 @@ export default function Login() {
           </div>
           <div className="flex flex-col items-center">
             <button
-              className={`w-full ${isFormValid ? "bg-color hover:bg-lightColor" : "bg-gray-300 cursor-not-allowed"} text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline`}
+              className={`w-full ${isFormValid ? "bg-black hover:bg-lightColor" : "bg-gray-300 cursor-not-allowed"} text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline`}
               type="button"
               disabled={!isFormValid}
             >
-              Sign In
+              Update Password
             </button>
             <Link
               className="mt-4 text-color hover:text-lightColor font-bold text-sm"
-              href="/forget_password"
+              href="/"
             >
-              Forgot Password?
+            Go to Login
             </Link>
           </div>
         </form>
