@@ -35,7 +35,7 @@ export default function Login() {
       <div className="bg-white w-full max-w-md rounded-3xl shadow-lg p-8 mx-4">
         <div className="text-center mb-6">
         <div className="flex justify-center items-center"> <Image 
-            src="/logo.jpeg"
+            src="/logo-min.png"
             width={100}
             height={100}  
             alt="logo"
