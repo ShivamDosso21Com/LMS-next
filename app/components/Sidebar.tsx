@@ -19,7 +19,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
     { label: "Practice", value: "/home/practice", icon: MdOutlineVideoSettings },
     { label: "Projects", value: "/home/projects", icon: GoProject },
     { label: "Refer and Earn", value: "/home/refer_and_earn", icon: IoGiftOutline },
-  
   ];
 
   const medias = [
@@ -30,15 +29,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
   ];
 
   return (
-    <div className={`bg-white flex flex-col h-screen mt-16 shadow-2xl fixed top-0 left-0 z-40 w-fit transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out sm:translate-x-0 sm:static sm:shadow-none`}>
-      <ul className="flex-grow">
+    <div className={`bg-white flex flex-col h-screen shadow-2xl fixed top-0 left-0 z-40 w-fit transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out sm:translate-x-0 sm:static sm:shadow-none`}>
+      <ul className="flex-grow mt-16">
         {options.map((option, index) => (
           <li
             key={index}
-            className="flex items-center mt-3 gap-4 hover:bg-color hover:text-white hover:rounded-lg"
+            className="flex items-center gap-4 mt-3 hover:bg-gray-200 hover:text-black hover:rounded-lg"
           >
             <Link href={option.value}>
-              <button className="p-3 flex items-center w-full hover:text-white" onClick={handleClose}>
+              <button className="p-3 flex items-center w-full hover:text-black" onClick={handleClose}>
                 <option.icon className="mr-2" />
                 {option.label}
               </button>
@@ -46,7 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
           </li>
         ))}
       </ul>
-      <div className="bg-gray-100 w-fit p-4 mb-16">
+      <div className="bg-gray-100 p-4">
         <h1 className="text-gray-700 mb-3">Follow us on social media</h1>
         <div className="flex justify-around">
           {medias.map((media, index) => (

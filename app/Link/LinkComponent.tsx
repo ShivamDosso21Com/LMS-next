@@ -284,7 +284,7 @@ const LinkComponent = () => {
 
   return (
     <div 
-    className="min-h-screen bg-white p-2"
+    className="min-h-fit w-full bg-white p-2"
     >
       <main className="mt-1 flex flex-col md:flex-row">
         <LeftNav
