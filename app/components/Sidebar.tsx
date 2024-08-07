@@ -5,13 +5,15 @@ import { GoProject } from "react-icons/go";
 import { FaChalkboard, FaYoutube, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoGiftOutline } from "react-icons/io5";
+import Study_bar from "./Study_bar";
 
 interface SidebarProps {
   isOpen: boolean;
   handleClose: () => void;
+  children?: React.ReactNode; // Allow additional children
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose, children }) => {
   const options = [
     { label: "Home", value: "/home", icon: IoHomeOutline },
     { label: "Learn", value: "/home/learn", icon: IoBookOutline },
@@ -29,15 +31,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
   ];
 
   return (
-    <div className={`bg-white flex flex-col h-screen shadow-2xl fixed top-0 left-0 z-40 w-fit transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out sm:translate-x-0 sm:static sm:shadow-none`}>
+    <div className={`bg-white flex flex-col h-screen shadow-2xl fixed top-0 left-0 z-40 transform w-fit ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out sm:translate-x-0 sm:static sm:shadow-none`}>
+      {/* Study_bar at the top when sidebar is open */}
+      {isOpen && <div className="mt-16 sm:hidden"><Study_bar /></div>}
       <ul className="flex-grow mt-16">
         {options.map((option, index) => (
           <li
             key={index}
-            className="flex items-center gap-4 mt-3 hover:bg-gray-200 hover:text-black hover:rounded-lg"
+            className="flex items-center gap-4 mt-3
+             hover:bg-gray-200 hover:text-black hover:rounded-lg"
           >
             <Link href={option.value}>
-              <button className="p-3 flex items-center w-full hover:text-black" onClick={handleClose}>
+              <button className="p-3 flex items-center w-full text-left hover:text-black" onClick={handleClose}>
                 <option.icon className="mr-2" />
                 {option.label}
               </button>
@@ -57,6 +62,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, handleClose }) => {
             </button>
           ))}
         </div>
+        {/* Render additional children */}
+        {children}
       </div>
     </div>
   );

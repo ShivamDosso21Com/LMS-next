@@ -16,6 +16,7 @@ export const login = async (userName: string, password: string) => {
         password,
       }),
     });
+  
     const data = await api.json();
     console.log(data);
     if (!api.ok) {
@@ -23,7 +24,7 @@ export const login = async (userName: string, password: string) => {
     }
 
     if (data.data.token) {
-      Cookies.set("token", data.token);
+      Cookies.set("token", data.data.token); // Ensure correct access to token
 
       Swal.fire({
         title: "Login Successful",
