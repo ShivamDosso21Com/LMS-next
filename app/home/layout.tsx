@@ -68,18 +68,9 @@ export default function RootLayout({
             </button>
           </div>
           <div className="flex items-center space-x-4">
-<<<<<<< HEAD
-            <Image src="/logo.jpeg" alt="Logo" width={80} height={100} className="object-contain" />
+            <Image src="/logo.png" alt="Logo" width={200} height={100} className="object-contain" />
             <div className="hidden sm:block">
               <Study_bar />
-=======
-            <Image src="/logo.png" alt="Logo" width={200} height={100} className="object-contain" />
-            <Study_bar />
-          </div>
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-blue-500 text-white flex items-center justify-center rounded-full text-lg font-bold">
-              P
->>>>>>> f67142040689e12dfe61b8b7810b9d6ef028bab0
             </div>
           </div>
           <div className="flex items-center">
