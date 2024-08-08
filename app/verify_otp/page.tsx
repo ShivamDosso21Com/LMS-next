@@ -1,15 +1,15 @@
 "use client";
 import React, { useEffect, useState, useRef } from 'react';
-import { useSearchParams } from 'next/navigation'; // Import from "next/navigation"
+import { useSearchParams } from 'next/navigation'; 
 import { Verify_otp } from '../services/api/auth/Verify_otp';
 
 const VerifyOtp: React.FC = () => {
   const searchParams = useSearchParams();
-  const emailAddress = searchParams.get('emailAddress') || ''; // Get emailAddress from query parameters
+  const emailAddress = searchParams.get('emailAddress') || ''; 
 
   console.log(emailAddress); 
 
-  const [timeLeft, setTimeLeft] = useState(120); // 2 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(120);
   const [isTimeUp, setIsTimeUp] = useState(false);
   const [otpS, setOtp] = useState<string[]>(Array(6).fill(''));
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);

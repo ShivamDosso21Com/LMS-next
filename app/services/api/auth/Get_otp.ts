@@ -24,7 +24,7 @@ export const Get_otp = async (emailAddress: String) => {
       throw new Error(data.message);
     }
 
-    if (data.message == "Otp is valid of 2 minutes") {
+    if (api.ok) {
       Swal.fire({
         title: "OTP sent Successful",
         icon: "success",
@@ -42,10 +42,6 @@ export const Get_otp = async (emailAddress: String) => {
       icon: "error",
       confirmButtonText: "Try Again",
       
-    }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = '/forget_password';
-        }
-      });
+    });
   }
 };

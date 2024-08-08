@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Get_user } from "../services/api/auth/Get_user"; // Adjust the import path
 import Cookie from "js-cookie";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const UserProfile = () => {
   const [initial, setInitial] = useState<string | null>(null);
@@ -43,28 +44,28 @@ const UserProfile = () => {
         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
           <ul className="py-2">
             <li>
-              <a
+              <Link
                 href="/home/profile"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
               >
                 My Profile
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/home/certificates"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
               >
                 My Certificates
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/home/passwords"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
               >
                 Manage Passwords
-              </a>
+              </Link>
             </li>
         
             <li>
